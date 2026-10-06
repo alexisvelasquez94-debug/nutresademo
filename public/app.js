@@ -40,8 +40,20 @@ function go(route) { if (location.hash === '#' + route) render(); else location.
 function toast(message) { const el = document.querySelector('#toast'); el.textContent = message; el.classList.add('visible'); clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('visible'), 5000); }
 function persist() {
   if (storageError) { toast('No se guardó: resuelve el error de almacenamiento. Puedes descargar un respaldo desde Mi registro.'); return false; }
-  try { saveState(state); document.querySelectorAll('[data-saved]').forEach(el => el.textContent = 'Guardado en este navegador'); return true; }
+  try { saveState(state); document.querySelectorAll('[data-saved]').forEach(el => el.textContent = 'Guardado en este navegador'); syncProgress(); return true; }
   catch { toast('No se pudo guardar. Revisa el espacio o los permisos del navegador.'); document.querySelectorAll('[data-saved]').forEach(el => el.textContent = 'Sin guardar · revisa el almacenamiento'); return false; }
+}
+function syncProgress() {
+  const percent=Math.round(STEPS.filter((_,i)=>isStepComplete(state,i)).length/8*100);
+  const label=document.querySelector('.aside-progress strong');
+  const progress=document.querySelector('.aside-progress progress');
+  if(label)label.textContent=percent+'%';
+  if(progress){progress.value=percent;progress.textContent=percent+'%';}
+  document.querySelectorAll('.step[data-step]').forEach(el=>{
+    const i=Number(el.dataset.step), done=isStepComplete(state,i);
+    el.classList.toggle('done',done);
+    el.querySelector('.step-number').innerHTML=done&&i!==currentStep?icon('check'):String(i+1);
+  });
 }
 function brand() { return `<a class="brand" href="#inicio" aria-label="Servicios Nutresa, inicio"><span class="brand-name">Servicios Nutresa<span class="brand-dot">.</span></span><span class="brand-group">Una empresa de Grupo Nutresa</span></a>`; }
 function shell(content, page) {

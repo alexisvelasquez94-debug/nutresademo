@@ -2,6 +2,8 @@
 
 Implementación completa del concepto **Conexión sostenible**: verde oliva, marfil, fotografía agrícola ilustrativa, formularios claros y diseño adaptable a móvil y escritorio.
 
+La web utiliza el paisaje completo seleccionado. `extras/cafeto-transparente.png` es una alternativa con transparencia generada a partir de esa imagen y se entrega por separado, sin cambiar el fondo del sitio. Consulta `DESPLEGAR.md` para la guía rápida de publicación por ZIP o repositorio.
+
 ## Publicar directamente en AWS Amplify
 
 El paquete `nutresa-amplify-listo.zip` contiene el sitio listo para publicar. **No necesita instalación ni compilación previa.**

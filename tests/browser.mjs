@@ -30,7 +30,7 @@ try {
   await fill('#general-nit','900123456-7');await fill('#general-name','Alimentos de Prueba');await fill('#general-legalName','Alimentos de Prueba S.A.S.');await fill('#general-email','demo@example.com');await fill('#general-phone','3001234567');
   assert.equal(await page.locator('[data-field="general.consent"]').isDisabled(),true);
   await btn('Leer aviso de tratamiento de datos').click();await btn('He leído el aviso').click();await page.locator('[data-field="general.consent"]').check();
-  await page.screenshot({path:'test-results/registro-escritorio.png',fullPage:true});await next();
+  assert.equal(await page.locator('.aside-progress strong').innerText(),'13%');await page.screenshot({path:'test-results/registro-escritorio.png',fullPage:true});await next();
   await page.waitForURL('**/#registro/1');await fill('#company-year','2010');await page.locator('#company-category').selectOption('Servicios');await page.locator('#company-subcategory').selectOption('Logística');await fill('#company-description','Transporte de alimentos.');await next();
   await page.waitForURL('**/#registro/2');await add('plants',{name:'Planta de prueba',country:'Colombia',city:'Medellín',address:'Calle de ejemplo 123'});
   await page.getByRole('button',{name:'Editar Planta de prueba',exact:true}).click();await fill('#row-form #city','Bogotá');await page.locator('#row-form').getByRole('button',{name:'Guardar',exact:true}).click();
