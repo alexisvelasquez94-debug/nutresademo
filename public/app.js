@@ -55,7 +55,7 @@ function syncProgress() {
     el.querySelector('.step-number').innerHTML=done&&i!==currentStep?icon('check'):String(i+1);
   });
 }
-function brand() { return `<a class="brand" href="#inicio" aria-label="Servicios Nutresa, inicio"><span class="brand-name">Servicios Nutresa<span class="brand-dot">.</span></span><span class="brand-group">Una empresa de Grupo Nutresa</span></a>`; }
+function brand() { return `<a class="brand" href="#inicio" aria-label="Servicios Nutresa, inicio"><img class="brand-logo" src="./assets/logo-servicios-nutresa.png" width="300" height="83" alt="Servicios Nutresa"><span class="brand-group">Una empresa de Grupo Nutresa</span></a>`; }
 function shell(content, page) {
   return `<div class="demo-bar"><span>${icon('leaf')} Conexiones que nos hacen crecer</span><span class="demo-tag">DEMO INTERACTIVA</span></div>
     <header class="site-header"><div class="header-inner">${brand()}<button class="icon-button mobile-menu" data-action="menu" aria-label="Abrir menú" aria-expanded="false">${icon('menu')}</button><nav class="main-nav" aria-label="Navegación principal"><a href="#inicio" ${page==='inicio'?'aria-current="page"':''}>Inicio</a><a href="#registro" ${page==='registro'?'aria-current="page"':''}>Registro de proveedor</a><a href="#ayuda" ${page==='ayuda'?'aria-current="page"':''}>Preguntas frecuentes</a><span class="nav-divider"></span><span class="language">${icon('globe')} ES</span>${session ? `<a class="nav-account" href="#mi-registro">${icon('user')} Mi registro</a><button class="text-button" data-action="logout">Salir</button>` : `<a class="button small" href="#login">Iniciar sesión ${icon('arrow')}</a>`}</nav></div></header>

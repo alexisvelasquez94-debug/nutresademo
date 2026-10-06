@@ -1,6 +1,6 @@
 # Servicios Nutresa · Demo de aprovisionamiento potencial
 
-Implementación completa del concepto **Conexión sostenible**: verde oliva, marfil, fotografía agrícola ilustrativa, formularios claros y diseño adaptable a móvil y escritorio.
+Implementación completa del concepto **Conexión sostenible**: logo oficial de Servicios Nutresa, tipografía Poppins y verdes del portal original, fotografía agrícola ilustrativa, formularios claros y diseño adaptable a móvil y escritorio.
 
 La web utiliza el paisaje completo seleccionado. `extras/cafeto-transparente.png` es una alternativa con transparencia generada a partir de esa imagen y se entrega por separado, sin cambiar el fondo del sitio. Consulta `DESPLEGAR.md` para la guía rápida de publicación por ZIP o repositorio.
 
@@ -62,7 +62,7 @@ Esta es una **demo estática, sin backend**:
 - El JSON exportado contiene los campos y metadatos de adjuntos, **no los archivos binarios**. Cada archivo se descarga individualmente desde el módulo 8. El JSON es un resumen y no dispone de importación.
 - El chatbot responde con reglas y una base de preguntas frecuentes editable; no llama a modelos de IA, no tiene claves API y no consulta información interna.
 - El aviso de privacidad es un texto explicativo de la demo, no una política corporativa oficial.
-- La fotografía es una ilustración generada con IA de un paisaje agrícola; no identifica una propiedad de Nutresa. El nombre de marca es tipográfico; no se incluye un logotipo corporativo inventado.
+- La fotografía es una ilustración generada con IA de un paisaje agrícola; no identifica una propiedad de Nutresa. El logo de Servicios Nutresa se reutiliza sin modificaciones desde su sitio oficial. Poppins y el verde base #00843D se verificaron en los estilos del portal de las capturas.
 
 Usa información ficticia. Para un despliegue productivo se necesitan autenticación real, autorización en servidor, base de datos, almacenamiento privado de documentos y política de privacidad aprobada. Una arquitectura posterior puede usar Amazon Cognito, API/Lambda, DynamoDB y S3; ninguno de esos servicios se aprovisiona con este código ni con `amplify.yml`.
 
